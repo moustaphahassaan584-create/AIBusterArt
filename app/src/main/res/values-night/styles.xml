@@ -1,0 +1,6 @@
+<resources>
+    <style name="App.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">#275cd2</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <style name="App.Button" parent="Widget.Material3.Button">
+        <item name="backgroundTint">?attr/colorPrimary</item>
+    </style>
+</resources>
