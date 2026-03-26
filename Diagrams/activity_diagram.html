@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AIBuster – Activity Diagram</title>
+<style>
+  body { background: #f0f4f8; font-family: 'Segoe UI', Arial, sans-serif; padding: 30px; }
+  h2 { text-align: center; font-size: 20px; color: #1F3864; margin-bottom: 24px; letter-spacing: 1px; }
+</style>
+</head>
+<body>
+<h2>AIBuster — Activity Diagram: Image Detection Flow</h2>
+<svg width="900" height="960" viewBox="0 0 900 960" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#334"/>
+    </marker>
+  </defs>
+
+  <!-- Swimlane backgrounds -->
+  <rect x="10"  y="50" width="185" height="870" rx="6" fill="#e8f0fb" stroke="#b0c4de" stroke-width="1.2"/>
+  <text x="102" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#1F3864">User / Frontend</text>
+
+  <rect x="200" y="50" width="210" height="870" rx="6" fill="#fff3e8" stroke="#e0b080" stroke-width="1.2"/>
+  <text x="305" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#8B4500">Backend (API)</text>
+
+  <rect x="415" y="50" width="205" height="870" rx="6" fill="#e8f8ee" stroke="#80c090" stroke-width="1.2"/>
+  <text x="517" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a5c35">AI / ML Engines</text>
+
+  <rect x="625" y="50" width="265" height="870" rx="6" fill="#f5e8fb" stroke="#c090d8" stroke-width="1.2"/>
+  <text x="757" y="73" text-anchor="middle" font-size="12" font-weight="bold" fill="#5a1a7a">Ensemble &amp; Result</text>
+
+  <!-- START -->
+  <circle cx="450" cy="100" r="11" fill="#1F3864"/>
+  <line x1="450" y1="111" x2="450" y2="130" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 1. Upload Image -->
+  <rect x="25" y="132" width="150" height="36" rx="16" fill="#4a72c4" stroke="#1F3864" stroke-width="1.5"/>
+  <text x="100" y="155" text-anchor="middle" font-size="12" fill="white">Upload Image</text>
+  <line x1="175" y1="150" x2="210" y2="150" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- 2. Validate -->
+  <rect x="212" y="132" width="186" height="36" rx="16" fill="#f09040" stroke="#c06000" stroke-width="1.5"/>
+  <text x="305" y="148" text-anchor="middle" font-size="11" fill="white">Receive &amp; Validate Image</text>
+  <text x="305" y="161" text-anchor="middle" font-size="10" fill="white">(format, size check)</text>
+  <line x1="305" y1="168" x2="305" y2="186" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Decision: valid? -->
+  <polygon points="305,188 340,208 305,228 270,208" fill="#ffe0b0" stroke="#c06000" stroke-width="1.5"/>
+  <text x="305" y="212" text-anchor="middle" font-size="11" fill="#8B4500">Valid?</text>
+
+  <!-- No → error -->
+  <line x1="270" y1="208" x2="210" y2="208" stroke="#c00" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="240" y="202" font-size="10" fill="#c00">No</text>
+  <rect x="30" y="192" width="175" height="32" rx="8" fill="#ffd6d6" stroke="#c00" stroke-width="1"/>
+  <text x="117" y="212" text-anchor="middle" font-size="11" fill="#900">Return Error to User</text>
+
+  <!-- Yes → preprocess -->
+  <line x1="305" y1="228" x2="305" y2="248" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="315" y="243" font-size="10" fill="#1a5c35">Yes</text>
+
+  <!-- 3. Preprocessing -->
+  <rect x="212" y="250" width="186" height="40" rx="16" fill="#f09040" stroke="#c06000" stroke-width="1.5"/>
+  <text x="305" y="267" text-anchor="middle" font-size="11" fill="white">Preprocessing Pipeline</text>
+  <text x="305" y="281" text-anchor="middle" font-size="10" fill="white">Strip EXIF · CLAHE · Resize 224×224</text>
+  <line x1="305" y1="290" x2="305" y2="308" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- FORK BAR -->
+  <rect x="215" y="308" width="675" height="5" rx="2" fill="#1F3864"/>
+  <text x="550" y="304" text-anchor="middle" font-size="10" fill="#1F3864">[ Fork — Parallel Execution ]</text>
+
+  <!-- Parallel branches down -->
+  <line x1="290" y1="313" x2="290" y2="333" stroke="#1F3864" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="430" y1="313" x2="460" y2="333" stroke="#1F3864" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="560" y1="313" x2="530" y2="333" stroke="#1F3864" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="700" y1="313" x2="730" y2="333" stroke="#1F3864" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- FFT -->
+  <rect x="220" y="335" width="140" height="34" rx="14" fill="#40a070" stroke="#1a5c35" stroke-width="1.5"/>
+  <text x="290" y="357" text-anchor="middle" font-size="12" fill="white">FFT Analysis</text>
+
+  <!-- ELA -->
+  <rect x="390" y="335" width="140" height="34" rx="14" fill="#40a070" stroke="#1a5c35" stroke-width="1.5"/>
+  <text x="460" y="357" text-anchor="middle" font-size="12" fill="white">ELA Analysis</text>
+
+  <!-- Noise -->
+  <rect x="420" y="395" width="185" height="36" rx="14" fill="#40a070" stroke="#1a5c35" stroke-width="1.5"/>
+  <text x="512" y="413" text-anchor="middle" font-size="11" fill="white">Noise Pattern Forensics</text>
+  <text x="512" y="425" text-anchor="middle" font-size="10" fill="white">variance · corr · entropy · channel</text>
+  <line x1="460" y1="369" x2="490" y2="393" stroke="#334" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- DL Models -->
+  <rect x="650" y="335" width="220" height="36" rx="14" fill="#9060c0" stroke="#5a1a7a" stroke-width="1.5"/>
+  <text x="760" y="353" text-anchor="middle" font-size="12" fill="white">Deep Learning Models</text>
+  <text x="760" y="367" text-anchor="middle" font-size="10" fill="white">Fine-tuned ViT · SigLIP · SMOGY</text>
+
+  <!-- TTA -->
+  <rect x="650" y="390" width="220" height="36" rx="14" fill="#9060c0" stroke="#5a1a7a" stroke-width="1.5"/>
+  <text x="760" y="408" text-anchor="middle" font-size="12" fill="white">Test-Time Augmentation</text>
+  <text x="760" y="420" text-anchor="middle" font-size="10" fill="white">original · flip · center crop → avg</text>
+  <line x1="760" y1="371" x2="760" y2="388" stroke="#334" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- Outputs -->
+  <rect x="225" y="390" width="130" height="30" rx="8" fill="#c8ecd8" stroke="#40a070" stroke-width="1"/>
+  <text x="290" y="409" text-anchor="middle" font-size="11" fill="#1a5c35">Frequency Map</text>
+  <line x1="290" y1="369" x2="290" y2="388" stroke="#334" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- JOIN BAR -->
+  <line x1="290" y1="420" x2="290" y2="455" stroke="#334" stroke-width="1.2"/>
+  <line x1="512" y1="433" x2="512" y2="455" stroke="#334" stroke-width="1.2"/>
+  <line x1="760" y1="428" x2="760" y2="455" stroke="#334" stroke-width="1.2"/>
+  <rect x="215" y="455" width="675" height="5" rx="2" fill="#1F3864"/>
+  <text x="550" y="451" text-anchor="middle" font-size="10" fill="#1F3864">[ Join ]</text>
+
+  <!-- Ensemble -->
+  <line x1="550" y1="460" x2="550" y2="480" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="380" y="482" width="340" height="44" rx="18" fill="#4a2080" stroke="#1F3864" stroke-width="2"/>
+  <text x="550" y="500" text-anchor="middle" font-size="13" font-weight="bold" fill="white">Ensemble Aggregator (V3)</text>
+  <text x="550" y="516" text-anchor="middle" font-size="10" fill="#ddd">0.50·ViT + 0.20·Noise + 0.15·SigLIP + 0.15·SMOGY</text>
+  <line x1="550" y1="526" x2="550" y2="548" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Decision: score > 0.5? -->
+  <polygon points="550,550 595,575 550,600 505,575" fill="#ffe8b0" stroke="#c06000" stroke-width="1.8"/>
+  <text x="550" y="572" text-anchor="middle" font-size="11" fill="#8B4500">Score</text>
+  <text x="550" y="586" text-anchor="middle" font-size="11" fill="#8B4500">&gt; 0.5?</text>
+
+  <!-- FAKE -->
+  <line x1="595" y1="575" x2="660" y2="575" stroke="#c00" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="628" y="568" font-size="10" fill="#c00">Yes</text>
+  <rect x="662" y="557" width="120" height="36" rx="14" fill="#ffd0d0" stroke="#c00" stroke-width="1.5"/>
+  <text x="722" y="575" text-anchor="middle" font-size="13" font-weight="bold" fill="#900">FAKE</text>
+  <text x="722" y="588" text-anchor="middle" font-size="10" fill="#900">AI-Generated</text>
+
+  <!-- REAL -->
+  <line x1="505" y1="575" x2="435" y2="575" stroke="#1a5c35" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="470" y="568" font-size="10" fill="#1a5c35">No</text>
+  <rect x="313" y="557" width="120" height="36" rx="14" fill="#d0ffd8" stroke="#1a5c35" stroke-width="1.5"/>
+  <text x="373" y="575" text-anchor="middle" font-size="13" font-weight="bold" fill="#1a5c35">REAL</text>
+  <text x="373" y="588" text-anchor="middle" font-size="10" fill="#1a5c35">Authentic Photo</text>
+
+  <!-- Join to result -->
+  <line x1="373" y1="593" x2="373" y2="620" stroke="#334" stroke-width="1.2"/>
+  <line x1="722" y1="593" x2="722" y2="620" stroke="#334" stroke-width="1.2"/>
+  <line x1="373" y1="620" x2="722" y2="620" stroke="#334" stroke-width="1.2"/>
+  <line x1="548" y1="620" x2="548" y2="642" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Return result -->
+  <rect x="368" y="644" width="360" height="42" rx="16" fill="#4a72c4" stroke="#1F3864" stroke-width="1.8"/>
+  <text x="548" y="661" text-anchor="middle" font-size="12" fill="white">Return Verdict + Confidence + Visual Evidence</text>
+  <text x="548" y="677" text-anchor="middle" font-size="10" fill="#cdd">(FFT map · ELA map · Noise residual · Score)</text>
+
+  <!-- to user display -->
+  <line x1="368" y1="665" x2="185" y2="665" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="25" y="648" width="158" height="36" rx="16" fill="#4a72c4" stroke="#1F3864" stroke-width="1.5"/>
+  <text x="104" y="663" text-anchor="middle" font-size="11" fill="white">Display Result</text>
+  <text x="104" y="677" text-anchor="middle" font-size="10" fill="#cdd">+ Forensic Visuals</text>
+
+  <!-- END -->
+  <line x1="104" y1="684" x2="104" y2="710" stroke="#334" stroke-width="1.5" marker-end="url(#arr)"/>
+  <circle cx="104" cy="723" r="11" fill="#1F3864"/>
+  <circle cx="104" cy="723" r="15" fill="none" stroke="#1F3864" stroke-width="2.5"/>
+
+  <!-- LEGEND -->
+  <rect x="15" y="760" width="870" height="80" rx="8" fill="white" stroke="#ccc" stroke-width="1"/>
+  <text x="450" y="780" text-anchor="middle" font-size="12" font-weight="bold" fill="#1F3864">Legend</text>
+  <rect x="35"  y="793" width="20" height="14" rx="6" fill="#4a72c4"/><text x="62"  y="804" font-size="11" fill="#333">User Action</text>
+  <rect x="150" y="793" width="20" height="14" rx="6" fill="#f09040"/><text x="177" y="804" font-size="11" fill="#333">Backend Process</text>
+  <rect x="300" y="793" width="20" height="14" rx="6" fill="#40a070"/><text x="327" y="804" font-size="11" fill="#333">AI / Forensic Engine</text>
+  <rect x="460" y="793" width="20" height="14" rx="6" fill="#9060c0"/><text x="487" y="804" font-size="11" fill="#333">Deep Learning</text>
+  <rect x="590" y="793" width="20" height="14" rx="6" fill="#4a2080"/><text x="617" y="804" font-size="11" fill="#333">Ensemble Logic</text>
+  <polygon points="720,800 734,807 720,814 706,807" fill="#ffe8b0" stroke="#c06000" stroke-width="1"/><text x="742" y="811" font-size="11" fill="#333">Decision</text>
+</svg>
+</body>
+</html>
