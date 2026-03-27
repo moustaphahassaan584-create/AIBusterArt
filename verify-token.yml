@@ -1,0 +1,13 @@
+name: Test Token Connection
+on: [push]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run script
+        env:
+          # هنا بنقول لـ GitHub افتح الخزنة وطلّع التوكن للملف بتاعنا
+          REPLICATE_API_TOKEN: ${{ secrets.REPLICATE_API_TOKEN }}
+        run: python check_my_token.py
