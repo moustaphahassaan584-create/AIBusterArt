@@ -1,0 +1,13 @@
+# ── Hugging Face Spaces – CPU-only requirements ──────────────────────────────
+# HF Spaces runs Python 3.13. PyTorch 2.6.0 is the first release supporting
+# Python 3.13. CPU-only builds are ~100 MB, so no build timeout.
+
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.6.0+cpu
+torchvision==0.21.0+cpu
+
+gradio>=5.0.0
+Pillow>=9.0.0
+numpy>=1.21.0
+matplotlib>=3.5.0
+transformers>=4.38.0
