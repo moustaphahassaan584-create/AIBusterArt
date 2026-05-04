@@ -35,12 +35,12 @@ from fastapi.responses import JSONResponse
 # ⬇️ CHANGE THIS to your fine-tuned model ID after running the notebook
 FINETUNED_MODEL = "mohamed9679/ai-image-detector-v1"
 
-# Weights for the ensemble (fine-tuned model is the primary detector)
+# Weights for the ensemble — as described in the research report
 WEIGHTS = {
-    "finetuned": 0.85,   # Your model — 85% of the vote
-    "siglip":    0.00,   # Disabled — fine-tuned model is strong enough
-    "smogy":     0.00,   # Disabled — fine-tuned model is strong enough
-    "noise":     0.15,   # Physics-based forensics (catches non-ML artifacts)
+    "finetuned": 0.50,   # Fine-tuned ViT — primary detector (50%)
+    "siglip":    0.15,   # SigLIP backup model (15%)
+    "smogy":     0.15,   # SMOGY backup model (15%)
+    "noise":     0.20,   # Physics-based noise forensics (20%)
 }
 
 
