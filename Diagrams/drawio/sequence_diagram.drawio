@@ -18,7 +18,7 @@
         <mxCell id="actor_front" value="&lt;b style=&quot;font-size:12px&quot;&gt;Frontend&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#cdd&quot;&gt;(Gradio / Android)&lt;/span&gt;" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#4a72c4;fontColor=#ffffff;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="170" y="20" width="130" height="44" as="geometry" />
         </mxCell>
-        <mxCell id="actor_back" value="&lt;b style=&quot;font-size:12px&quot;&gt;Backend&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#ffffff&quot;&gt;(FastAPI / ASP.NET)&lt;/span&gt;" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f09040;fontColor=#ffffff;strokeColor=none;" vertex="1" parent="1">
+        <mxCell id="actor_back" value="&lt;b style=&quot;font-size:12px&quot;&gt;Backend&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#ffffff&quot;&gt;(FastAPI + Gradio)&lt;/span&gt;" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#f09040;fontColor=#ffffff;strokeColor=none;" vertex="1" parent="1">
           <mxGeometry x="320" y="20" width="140" height="44" as="geometry" />
         </mxCell>
         <mxCell id="actor_prep" value="&lt;b style=&quot;font-size:12px&quot;&gt;Preprocessor&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:10px;color:#eeeeee&quot;&gt;EXIF·CLAHE·Resize&lt;/span&gt;" style="rounded=1;absoluteArcSize=1;arcSize=8;whiteSpace=wrap;html=1;fillColor=#60a8d0;fontColor=#ffffff;strokeColor=none;" vertex="1" parent="1">
@@ -104,8 +104,8 @@
         </mxCell>
 
         <!-- LOOP -->
-        <mxCell id="par_box" value="par [ FFT Analysis ]" style="rounded=1;absoluteArcSize=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#fff8cc;strokeColor=#c0a000;strokeWidth=1;fontColor=#806000;fontSize=10;" vertex="1" parent="1">
-          <mxGeometry x="420" y="288" width="285" height="22" as="geometry" />
+        <mxCell id="par_box" value="par [ Parallel Analysis Pipeline ]" style="rounded=1;absoluteArcSize=1;arcSize=4;whiteSpace=wrap;html=1;fillColor=#fff8cc;strokeColor=#c0a000;strokeWidth=1;fontColor=#806000;fontSize=10;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="415" y="288" width="355" height="205" as="geometry" />
         </mxCell>
 
         <!-- AI Engine Rects -->
@@ -134,7 +134,7 @@
         </mxCell>
 
         <!-- Call Ensemble -->
-        <mxCell id="msg7_line" value="aggregate(scores[], noiseScore)" style="endArrow=block;endFill=1;html=1;strokeColor=#1F3864;strokeWidth=1.8;labelBackgroundColor=none;fontColor=#1F3864;fontSize=11;verticalAlign=bottom;" edge="1" parent="1">
+        <mxCell id="msg7_line" value="aggregate(scores{})" style="endArrow=block;endFill=1;html=1;strokeColor=#1F3864;strokeWidth=1.8;labelBackgroundColor=none;fontColor=#1F3864;fontSize=11;verticalAlign=bottom;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry"><mxPoint x="394" y="526" as="sourcePoint" /><mxPoint x="849" y="526" as="targetPoint" /></mxGeometry>
         </mxCell>
 
@@ -165,7 +165,7 @@
         </mxCell>
 
         <!-- END NOTE -->
-        <mxCell id="end_note" value="Note: Steps 9–14 (FFT, ELA, Noise, ViT, SigLIP, SMOGY) execute in parallel via async pipeline&lt;br&gt;and results are collected before ensemble aggregation in step 16." style="rounded=1;absoluteArcSize=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#fffde0;strokeColor=#c0a000;strokeWidth=1;fontColor=#806000;fontSize=11;" vertex="1" parent="1">
+        <mxCell id="end_note" value="Note: All analysis engines (FFT, ELA, Noise, ViT, SigLIP, SMOGY) execute in parallel via async pipeline&lt;br&gt;and results are collected before ensemble aggregation." style="rounded=1;absoluteArcSize=1;arcSize=6;whiteSpace=wrap;html=1;fillColor=#fffde0;strokeColor=#c0a000;strokeWidth=1;fontColor=#806000;fontSize=11;" vertex="1" parent="1">
           <mxGeometry x="30" y="718" width="920" height="36" as="geometry" />
         </mxCell>
 

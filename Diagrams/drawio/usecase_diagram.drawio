@@ -112,6 +112,12 @@
         <mxCell id="a-and-uc13" edge="1" parent="1" source="actor-android" style="endArrow=none;html=1;strokeColor=#7050a8;strokeWidth=1.4;" target="uc13">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="a-and-uc2" edge="1" parent="1" source="actor-android" style="endArrow=none;html=1;strokeColor=#7050a8;strokeWidth=1.4;" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-and-uc3" edge="1" parent="1" source="actor-android" style="endArrow=none;html=1;strokeColor=#7050a8;strokeWidth=1.4;" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="inc-uc1-uc7" edge="1" parent="1" source="uc1" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc7" value="«include»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -127,16 +133,16 @@
         <mxCell id="inc-uc7-uc11" edge="1" parent="1" source="uc7" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc11" value="«include»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="inc-uc8-uc12" edge="1" parent="1" source="uc8" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc12" value="«include»">
+        <mxCell id="inc-uc12-uc8" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc8" value="«include»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="inc-uc9-uc12" edge="1" parent="1" source="uc9" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc12" value="«include»">
+        <mxCell id="inc-uc12-uc9" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc9" value="«include»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="inc-uc10-uc12" edge="1" parent="1" source="uc10" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc12" value="«include»">
+        <mxCell id="inc-uc12-uc10" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc10" value="«include»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="inc-uc11-uc12" edge="1" parent="1" source="uc11" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc12" value="«include»">
+        <mxCell id="inc-uc12-uc11" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc11" value="«include»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="inc-uc12-uc13" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc13" value="«include»">
@@ -145,7 +151,7 @@
         <mxCell id="inc-uc14-uc11" edge="1" parent="1" source="uc14" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#f09040;strokeWidth=1.3;fontSize=9;fontColor=#f09040;labelBackgroundColor=none;" target="uc11" value="«include»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="inc-uc2-uc13" edge="1" parent="1" source="uc2" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc13" value="«include»">
+        <mxCell id="ext-uc2-uc13" edge="1" parent="1" source="uc2" style="endArrow=open;endFill=0;dashed=1;dashPattern=4 4;html=1;strokeColor=#888888;strokeWidth=1.2;fontSize=9;fontColor=#888888;labelBackgroundColor=none;" target="uc13" value="«extend»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="inc-uc5-uc1" edge="1" parent="1" source="uc5" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc1" value="«include»">
@@ -160,18 +166,7 @@
         <mxCell id="ext-uc4-uc8" edge="1" parent="1" source="uc4" style="endArrow=open;endFill=0;dashed=1;dashPattern=4 4;html=1;strokeColor=#888888;strokeWidth=1.2;fontSize=9;fontColor=#888888;labelBackgroundColor=none;" target="uc8" value="«extend»">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="7CcoWb8MhYTV46oX-6QU-1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
-          <mxGeometry height="60" width="30" x="1080" y="555" as="geometry" />
-        </mxCell>
-        <mxCell id="7CcoWb8MhYTV46oX-6QU-2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
-          <mxGeometry height="60" width="30" x="1080" y="150" as="geometry" />
-        </mxCell>
-        <mxCell id="7CcoWb8MhYTV46oX-6QU-3" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
-          <mxGeometry height="60" width="30" x="40" y="145" as="geometry" />
-        </mxCell>
-        <mxCell id="7CcoWb8MhYTV46oX-6QU-4" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" value="Actor" vertex="1">
-          <mxGeometry height="60" width="30" x="41" y="580" as="geometry" />
-        </mxCell>
+
       </root>
     </mxGraphModel>
   </diagram>
