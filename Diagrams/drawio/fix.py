@@ -1,77 +1,12 @@
-<mxfile host="app.diagrams.net" version="21.0.0">
-  <diagram name="Component Diagram" id="component-diagram">
-    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
-      <root>
-        <mxCell id="0" />
-        <mxCell id="1" parent="0" />
+import io
 
-        <!-- System Boundary Background -->
-        <mxCell id="sys" value="AIBuster Detection System (V3)" style="rounded=1;fillColor=#f8faff;strokeColor=#1F3864;strokeWidth=2;dashed=1;dashPattern=8 4;align=center;verticalAlign=top;fontSize=14;fontStyle=1;spacingTop=10;fontColor=#1F3864;" vertex="1" parent="1">
-          <mxGeometry x="200" y="40" width="850" height="750" as="geometry" />
-        </mxCell>
+file_path = r'd:\SCS\المستوي الرابع - الترم الأول\مشروع التخرج\AIBusterArt\Diagrams\drawio\component_diagram( simpler).drawio'
+with open(file_path, 'r', encoding='utf-8') as f:
+    lines = f.readlines()
 
-        <!-- Components -->
-        <mxCell id="c-browser" value="Web Browser&#xa;(Gradio UI Client)" style="shape=component;rounded=1;fillColor=#dce8fb;strokeColor=#1F3864;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="20" y="100" width="150" height="60" as="geometry" />
-        </mxCell>
+new_content = lines[:73]
 
-        <mxCell id="c-android" value="Android App&#xa;(Mobile Client)" style="shape=component;rounded=1;fillColor=#d4f0e0;strokeColor=#1a5c35;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="20" y="380" width="150" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="c-hf" value="HuggingFace Hub&#xa;(Model Registry)" style="shape=component;rounded=1;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="1100" y="400" width="150" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- API Layer -->
-        <mxCell id="c-gradio" value="Gradio UI Server&#xa;(Web Interface)" style="shape=component;rounded=1;fillColor=#dce8fb;strokeColor=#4a72c4;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="250" y="100" width="180" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="c-fastapi" value="FastAPI Server&#xa;(REST API)" style="shape=component;rounded=1;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="500" y="100" width="180" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- Processing Layer -->
-        <mxCell id="c-preproc" value="Preprocessor&#xa;(EXIF strip, RGB, JPEG)" style="shape=component;rounded=1;fillColor=#ddeeff;strokeColor=#60a8d0;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="375" y="220" width="200" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="c-tta" value="TTA Manager&#xa;(3 Views: Orig, Flip, Crop)" style="shape=component;rounded=1;fillColor=#ddeeff;strokeColor=#60a8d0;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="375" y="320" width="200" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- Engines -->
-        <mxCell id="c-fft" value="FFT Engine&#xa;(Visual Only)" style="shape=component;rounded=1;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="250" y="450" width="150" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="c-ela" value="ELA Engine&#xa;(Visual Only)" style="shape=component;rounded=1;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="250" y="550" width="150" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="c-noise" value="Noise Forensic Engine&#xa;(Weight: 20%)" style="shape=component;rounded=1;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="250" y="650" width="150" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="c-vit" value="Fine-Tuned ViT&#xa;(PRIMARY - Weight: 50%)" style="shape=component;rounded=1;fillColor=#e8d0f8;strokeColor=#4a2080;strokeWidth=3;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="550" y="450" width="200" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="c-siglip" value="SigLIP Engine&#xa;(Weight: 15%)" style="shape=component;rounded=1;fillColor=#f0eafc;strokeColor=#9060c0;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="550" y="550" width="200" height="60" as="geometry" />
-        </mxCell>
-
-        <mxCell id="c-smogy" value="SMOGY Engine&#xa;(Weight: 15%)" style="shape=component;rounded=1;fillColor=#f0eafc;strokeColor=#9060c0;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="550" y="650" width="200" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- Aggregator -->
-        <mxCell id="c-ens" value="Ensemble Aggregator&#xa;(Threshold: 0.5 -> FAKE/REAL)" style="shape=component;rounded=1;fillColor=#d8c0f0;strokeColor=#4a2080;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
-          <mxGeometry x="375" y="750" width="250" height="60" as="geometry" />
-        </mxCell>
-
-        <!-- ============ Data/Control Flow Edges ============ -->
+new_xml = """        <!-- ============ Data/Control Flow Edges ============ -->
         <mxCell id="e5" value="feeds" style="endArrow=block;endFill=1;strokeColor=#60a8d0;strokeWidth=1.5;fontSize=11;" edge="1" source="c-preproc" target="c-tta" parent="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
@@ -266,8 +201,9 @@
         <mxCell id="link-hf-weights" style="endArrow=none;strokeColor=#f09040;strokeWidth=1.5;" edge="1" source="c-hf" target="ball-weights" parent="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+\n"""
+new_content.append(new_xml)
+new_content.extend(lines[285:])
 
-      </root>
-    </mxGraphModel>
-  </diagram>
-</mxfile>
+with open(file_path, 'w', encoding='utf-8') as f:
+    f.writelines(new_content)
