@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" version="21.0.0">
   <diagram name="Component Diagram" id="component-diagram">
-    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" math="0" shadow="0">
+    <mxGraphModel dx="1000" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -11,63 +11,63 @@
         </mxCell>
 
         <!-- Components -->
-        <mxCell id="c-browser" value="Web Browser&#xa;(Gradio UI Client)" style="rounded=1;fillColor=#dce8fb;strokeColor=#1F3864;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-browser" value="Web Browser&#xa;(Gradio UI Client)" style="shape=component;rounded=1;fillColor=#dce8fb;strokeColor=#1F3864;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="20" y="100" width="150" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="c-android" value="Android App&#xa;(Mobile Client)" style="rounded=1;fillColor=#d4f0e0;strokeColor=#1a5c35;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-android" value="Android App&#xa;(Mobile Client)" style="shape=component;rounded=1;fillColor=#d4f0e0;strokeColor=#1a5c35;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="20" y="380" width="150" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="c-hf" value="HuggingFace Hub&#xa;(Model Registry)" style="rounded=1;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-hf" value="HuggingFace Hub&#xa;(Model Registry)" style="shape=component;rounded=1;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="1100" y="400" width="150" height="60" as="geometry" />
         </mxCell>
 
         <!-- API Layer -->
-        <mxCell id="c-gradio" value="Gradio UI Server&#xa;(Web Interface)" style="rounded=1;fillColor=#dce8fb;strokeColor=#4a72c4;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-gradio" value="Gradio UI Server&#xa;(Web Interface)" style="shape=component;rounded=1;fillColor=#dce8fb;strokeColor=#4a72c4;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="250" y="100" width="180" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="c-fastapi" value="FastAPI Server&#xa;(REST API)" style="rounded=1;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-fastapi" value="FastAPI Server&#xa;(REST API)" style="shape=component;rounded=1;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="500" y="100" width="180" height="60" as="geometry" />
         </mxCell>
 
         <!-- Processing Layer -->
-        <mxCell id="c-preproc" value="Preprocessor&#xa;(EXIF strip, RGB, JPEG)" style="rounded=1;fillColor=#ddeeff;strokeColor=#60a8d0;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-preproc" value="Preprocessor&#xa;(EXIF strip, RGB, JPEG)" style="shape=component;rounded=1;fillColor=#ddeeff;strokeColor=#60a8d0;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="375" y="220" width="200" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="c-tta" value="TTA Manager&#xa;(3 Views: Orig, Flip, Crop)" style="rounded=1;fillColor=#ddeeff;strokeColor=#60a8d0;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-tta" value="TTA Manager&#xa;(3 Views: Orig, Flip, Crop)" style="shape=component;rounded=1;fillColor=#ddeeff;strokeColor=#60a8d0;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="375" y="320" width="200" height="60" as="geometry" />
         </mxCell>
 
         <!-- Engines -->
-        <mxCell id="c-fft" value="FFT Engine&#xa;(Visual Only)" style="rounded=1;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-fft" value="FFT Engine&#xa;(Visual Only)" style="shape=component;rounded=1;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="250" y="450" width="150" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="c-ela" value="ELA Engine&#xa;(Visual Only)" style="rounded=1;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-ela" value="ELA Engine&#xa;(Visual Only)" style="shape=component;rounded=1;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="250" y="550" width="150" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="c-noise" value="Noise Forensic Engine&#xa;(Weight: 20%)" style="rounded=1;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-noise" value="Noise Forensic Engine&#xa;(Weight: 20%)" style="shape=component;rounded=1;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="250" y="650" width="150" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="c-vit" value="Fine-Tuned ViT&#xa;(PRIMARY - Weight: 50%)" style="rounded=1;fillColor=#e8d0f8;strokeColor=#4a2080;strokeWidth=3;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-vit" value="Fine-Tuned ViT&#xa;(PRIMARY - Weight: 50%)" style="shape=component;rounded=1;fillColor=#e8d0f8;strokeColor=#4a2080;strokeWidth=3;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="550" y="450" width="200" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="c-siglip" value="SigLIP Engine&#xa;(Weight: 15%)" style="rounded=1;fillColor=#f0eafc;strokeColor=#9060c0;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-siglip" value="SigLIP Engine&#xa;(Weight: 15%)" style="shape=component;rounded=1;fillColor=#f0eafc;strokeColor=#9060c0;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="550" y="550" width="200" height="60" as="geometry" />
         </mxCell>
 
-        <mxCell id="c-smogy" value="SMOGY Engine&#xa;(Weight: 15%)" style="rounded=1;fillColor=#f0eafc;strokeColor=#9060c0;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-smogy" value="SMOGY Engine&#xa;(Weight: 15%)" style="shape=component;rounded=1;fillColor=#f0eafc;strokeColor=#9060c0;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="550" y="650" width="200" height="60" as="geometry" />
         </mxCell>
 
         <!-- Aggregator -->
-        <mxCell id="c-ens" value="Ensemble Aggregator&#xa;(Threshold: 0.5 -> FAKE/REAL)" style="rounded=1;fillColor=#d8c0f0;strokeColor=#4a2080;strokeWidth=2;fontSize=12;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+        <mxCell id="c-ens" value="Ensemble Aggregator&#xa;(Threshold: 0.5 -> FAKE/REAL)" style="shape=component;rounded=1;fillColor=#d8c0f0;strokeColor=#4a2080;strokeWidth=2;fontSize=12;fontStyle=1;align=left;spacingLeft=36;verticalAlign=middle;" vertex="1" parent="1">
           <mxGeometry x="375" y="750" width="250" height="60" as="geometry" />
         </mxCell>
 
@@ -203,6 +203,84 @@
               <mxPoint x="1175" y="680" />
             </Array>
           </mxGeometry>
+        </mxCell>
+
+        <!-- ============ PROVIDED INTERFACES (Ball / Lollipop ●─) ============ -->
+
+        <!-- IAnalyze: FastAPI provides this interface (ball on left side) -->
+        <mxCell id="pi-analyze" value="IAnalyze" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=2;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="470" y="120" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="pi-analyze-link" style="endArrow=none;strokeColor=#f09040;strokeWidth=1.5;" edge="1" source="c-fastapi" target="pi-analyze" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- IWebUI: Gradio provides this interface (ball on left side) -->
+        <mxCell id="pi-webui" value="IWebUI" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#dce8fb;strokeColor=#4a72c4;strokeWidth=2;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="220" y="120" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="pi-webui-link" style="endArrow=none;strokeColor=#4a72c4;strokeWidth=1.5;" edge="1" source="c-gradio" target="pi-webui" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- IPreprocess: Preprocessor provides (ball on bottom) -->
+        <mxCell id="pi-preproc" value="IPreprocess" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#ddeeff;strokeColor=#60a8d0;strokeWidth=2;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="465" y="285" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="pi-preproc-link" style="endArrow=none;strokeColor=#60a8d0;strokeWidth=1.5;" edge="1" source="c-preproc" target="pi-preproc" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- IVerdict: Ensemble provides this interface (ball on right side) -->
+        <mxCell id="pi-verdict" value="IVerdict" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#d8c0f0;strokeColor=#4a2080;strokeWidth=2;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="635" y="770" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="pi-verdict-link" style="endArrow=none;strokeColor=#4a2080;strokeWidth=1.5;" edge="1" source="c-ens" target="pi-verdict" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- IModelWeights: HuggingFace provides (ball on left side) -->
+        <mxCell id="pi-weights" value="IModelWeights" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=2;fontSize=10;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="420" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="pi-weights-link" style="endArrow=none;strokeColor=#f09040;strokeWidth=1.5;" edge="1" source="c-hf" target="pi-weights" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ============ REQUIRED INTERFACES (Socket / Half-circle ◠) ============ -->
+
+        <!-- Browser requires IWebUI (socket facing the ball) -->
+        <mxCell id="ri-browser-webui" value="" style="shape=requiredInterface;html=1;fontSize=10;strokeColor=#1F3864;strokeWidth=2;direction=east;" vertex="1" parent="1">
+          <mxGeometry x="190" y="120" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ri-browser-webui-link" style="endArrow=none;strokeColor=#1F3864;strokeWidth=1.5;" edge="1" source="c-browser" target="ri-browser-webui" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Android requires IAnalyze (socket facing the ball) -->
+        <mxCell id="ri-android-analyze" value="" style="shape=requiredInterface;html=1;fontSize=10;strokeColor=#1a5c35;strokeWidth=2;direction=east;" vertex="1" parent="1">
+          <mxGeometry x="190" y="400" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ri-android-analyze-link" style="endArrow=none;strokeColor=#1a5c35;strokeWidth=1.5;" edge="1" source="c-android" target="ri-android-analyze" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- FastAPI requires IVerdict (socket) -->
+        <mxCell id="ri-fastapi-verdict" value="" style="shape=requiredInterface;html=1;fontSize=10;strokeColor=#4a2080;strokeWidth=2;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="580" y="165" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- Ensemble requires IScore (socket on top - from engines) -->
+        <mxCell id="ri-ens-score" value="IScore" style="shape=requiredInterface;html=1;fontSize=10;fontStyle=1;strokeColor=#4a2080;strokeWidth=2;direction=north;" vertex="1" parent="1">
+          <mxGeometry x="490" y="730" width="20" height="20" as="geometry" />
+        </mxCell>
+
+        <!-- ViT requires IModelWeights (socket on right) -->
+        <mxCell id="ri-vit-weights" value="" style="shape=requiredInterface;html=1;fontSize=10;strokeColor=#4a2080;strokeWidth=2;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="760" y="470" width="20" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="ri-vit-weights-link" style="endArrow=none;strokeColor=#4a2080;strokeWidth=1.5;" edge="1" source="c-vit" target="ri-vit-weights" parent="1">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
       </root>
