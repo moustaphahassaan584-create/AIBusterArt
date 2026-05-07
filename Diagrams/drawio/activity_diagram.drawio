@@ -94,28 +94,40 @@
           <mxGeometry x="225" y="392" width="130" height="30" as="geometry" />
         </mxCell>
 
-        <!-- ══ PARALLEL BRANCH 2: ELA → Noise ══ -->
+        <!-- ══ PARALLEL BRANCH 2: ELA ══ -->
         <mxCell id="act-ela" value="ELA Analysis"
           style="rounded=1;arcSize=50;fillColor=#40a070;strokeColor=#1a5c35;strokeWidth=1.5;fontColor=white;fontSize=12;html=1;"
           vertex="1" parent="1">
           <mxGeometry x="390" y="337" width="140" height="34" as="geometry" />
         </mxCell>
+        <mxCell id="act-elamap" value="ELA Error Map"
+          style="rounded=1;arcSize=20;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=1;fontSize=11;fontColor=#1a5c35;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="395" y="392" width="130" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ══ PARALLEL BRANCH 3: Noise Forensics ══ -->
         <mxCell id="act-noise" value="&lt;b&gt;Noise Pattern Forensics&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;variance · corr · entropy · channel&lt;/font&gt;"
           style="rounded=1;arcSize=40;fillColor=#40a070;strokeColor=#1a5c35;strokeWidth=1.5;fontColor=white;fontSize=11;html=1;"
           vertex="1" parent="1">
-          <mxGeometry x="418" y="392" width="185" height="36" as="geometry" />
+          <mxGeometry x="555" y="337" width="185" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="act-noisemap" value="Noise Residual Map"
+          style="rounded=1;arcSize=20;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=1;fontSize=11;fontColor=#1a5c35;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="560" y="392" width="140" height="30" as="geometry" />
         </mxCell>
 
-        <!-- ══ PARALLEL BRANCH 3: DL → TTA ══ -->
+        <!-- ══ PARALLEL BRANCH 4: DL → TTA ══ -->
         <mxCell id="act-dl" value="&lt;b&gt;Deep Learning Models&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Fine-tuned ViT · SigLIP · SMOGY&lt;/font&gt;"
           style="rounded=1;arcSize=40;fillColor=#9060c0;strokeColor=#5a1a7a;strokeWidth=1.5;fontColor=white;fontSize=12;html=1;"
           vertex="1" parent="1">
-          <mxGeometry x="648" y="337" width="220" height="36" as="geometry" />
+          <mxGeometry x="760" y="337" width="220" height="36" as="geometry" />
         </mxCell>
         <mxCell id="act-tta" value="&lt;b&gt;Test-Time Augmentation&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;original · flip · center crop → avg&lt;/font&gt;"
           style="rounded=1;arcSize=40;fillColor=#9060c0;strokeColor=#5a1a7a;strokeWidth=1.5;fontColor=white;fontSize=12;html=1;"
           vertex="1" parent="1">
-          <mxGeometry x="648" y="392" width="220" height="36" as="geometry" />
+          <mxGeometry x="760" y="392" width="220" height="36" as="geometry" />
         </mxCell>
 
         <!-- ══ JOIN BAR ══ -->
@@ -230,8 +242,14 @@
         </mxCell>
 
         <!-- Fork → ELA -->
-        <mxCell id="e-fork-ela" style="endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;html=1;exitX=0.4;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+        <mxCell id="e-fork-ela" style="endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;html=1;exitX=0.35;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
           edge="1" source="fork-bar" target="act-ela" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Fork → Noise -->
+        <mxCell id="e-fork-noise" style="endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;html=1;exitX=0.55;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="fork-bar" target="act-noise" parent="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
@@ -246,8 +264,13 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- ELA → Noise Forensics -->
-        <mxCell id="e-ela-noise" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.2;html=1;" edge="1" source="act-ela" target="act-noise" parent="1">
+        <!-- ELA → ELA Map -->
+        <mxCell id="e-ela-elamap" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.2;html=1;" edge="1" source="act-ela" target="act-elamap" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Noise → Noise Map -->
+        <mxCell id="e-noise-noisemap" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.2;html=1;" edge="1" source="act-noise" target="act-noisemap" parent="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
@@ -262,9 +285,15 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
-        <!-- Noise → Join Bar -->
-        <mxCell id="e-noise-join" style="endArrow=none;strokeColor=#334466;strokeWidth=1.2;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.45;entryY=0.5;entryDx=0;entryDy=0;"
-          edge="1" source="act-noise" target="join-bar" parent="1">
+        <!-- ELA Map → Join Bar -->
+        <mxCell id="e-elamap-join" style="endArrow=none;strokeColor=#334466;strokeWidth=1.2;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.35;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="act-elamap" target="join-bar" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Noise Map → Join Bar -->
+        <mxCell id="e-noisemap-join" style="endArrow=none;strokeColor=#334466;strokeWidth=1.2;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.55;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="act-noisemap" target="join-bar" parent="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
 
