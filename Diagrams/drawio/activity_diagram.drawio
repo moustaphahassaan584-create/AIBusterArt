@@ -1,0 +1,372 @@
+<mxfile host="app.diagrams.net" version="21.0.0">
+  <diagram name="AIBuster Activity Diagram" id="aibuster-activity">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="960" pageHeight="1020" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- ══ SWIMLANE BACKGROUNDS ══ -->
+        <mxCell id="lane1" value="User / Frontend"
+          style="text;html=1;align=center;verticalAlign=top;fontStyle=1;fontSize=12;fontColor=#1F3864;fillColor=#e8f0fb;strokeColor=#b0c4de;strokeWidth=1.2;spacingTop=6;rounded=1;arcSize=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="10" y="50" width="185" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="lane2" value="Backend (API)"
+          style="text;html=1;align=center;verticalAlign=top;fontStyle=1;fontSize=12;fontColor=#8B4500;fillColor=#fff3e8;strokeColor=#e0b080;strokeWidth=1.2;spacingTop=6;rounded=1;arcSize=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="200" y="50" width="210" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="lane3" value="AI / ML Engines"
+          style="text;html=1;align=center;verticalAlign=top;fontStyle=1;fontSize=12;fontColor=#1a5c35;fillColor=#e8f8ee;strokeColor=#80c090;strokeWidth=1.2;spacingTop=6;rounded=1;arcSize=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="415" y="50" width="205" height="890" as="geometry" />
+        </mxCell>
+        <mxCell id="lane4" value="Ensemble &amp; Result"
+          style="text;html=1;align=center;verticalAlign=top;fontStyle=1;fontSize=12;fontColor=#5a1a7a;fillColor=#f5e8fb;strokeColor=#c090d8;strokeWidth=1.2;spacingTop=6;rounded=1;arcSize=2;"
+          vertex="1" parent="1">
+          <mxGeometry x="625" y="50" width="265" height="890" as="geometry" />
+        </mxCell>
+
+        <!-- ══ START NODE ══ -->
+        <mxCell id="start" value=""
+          style="ellipse;fillColor=#1F3864;strokeColor=#1F3864;aspect=fixed;"
+          vertex="1" parent="1">
+          <mxGeometry x="89" y="90" width="22" height="22" as="geometry" />
+        </mxCell>
+
+        <!-- ══ ACTIVITY NODES ══ -->
+        <!-- 1. Upload Image (Lane 1) -->
+        <mxCell id="act-upload" value="Upload Image"
+          style="rounded=1;arcSize=50;fillColor=#4a72c4;strokeColor=#1F3864;strokeWidth=1.5;fontColor=white;fontSize=12;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="25" y="132" width="150" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- 2. Receive & Validate (Lane 2) -->
+        <mxCell id="act-validate" value="&lt;b&gt;Receive &amp; Validate Image&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;(format, size check)&lt;/font&gt;"
+          style="rounded=1;arcSize=50;fillColor=#f09040;strokeColor=#c06000;strokeWidth=1.5;fontColor=white;fontSize=11;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="212" y="132" width="186" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- Decision: Valid? (Lane 2) -->
+        <mxCell id="dec-valid" value="Valid?"
+          style="rhombus;fillColor=#ffe0b0;strokeColor=#c06000;strokeWidth=1.5;fontSize=11;fontColor=#8B4500;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="265" y="188" width="80" height="42" as="geometry" />
+        </mxCell>
+
+        <!-- Return Error (Lane 1) -->
+        <mxCell id="act-error" value="Return Error to User"
+          style="rounded=1;arcSize=20;fillColor=#ffd6d6;strokeColor=#cc0000;strokeWidth=1;fontSize=11;fontColor=#990000;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="22" y="192" width="170" height="32" as="geometry" />
+        </mxCell>
+
+        <!-- 3. Preprocessing Pipeline (Lane 2) -->
+        <mxCell id="act-preprocess" value="&lt;b&gt;Preprocessing Pipeline&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Strip EXIF · CLAHE · Resize 224×224&lt;/font&gt;"
+          style="rounded=1;arcSize=40;fillColor=#f09040;strokeColor=#c06000;strokeWidth=1.5;fontColor=white;fontSize=11;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="212" y="252" width="186" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ══ FORK BAR ══ -->
+        <mxCell id="fork-bar" value=""
+          style="fillColor=#1F3864;strokeColor=#1F3864;rounded=1;arcSize=10;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="215" y="310" width="675" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="fork-label" value="[ Fork — Parallel Execution ]"
+          style="text;html=1;align=center;fontSize=10;fontColor=#1F3864;strokeColor=none;fillColor=none;"
+          vertex="1" parent="1">
+          <mxGeometry x="350" y="295" width="210" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- ══ PARALLEL BRANCH 1: FFT → FreqMap ══ -->
+        <mxCell id="act-fft" value="FFT Analysis"
+          style="rounded=1;arcSize=50;fillColor=#40a070;strokeColor=#1a5c35;strokeWidth=1.5;fontColor=white;fontSize=12;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="220" y="337" width="140" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="act-freqmap" value="Frequency Map"
+          style="rounded=1;arcSize=20;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=1;fontSize=11;fontColor=#1a5c35;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="225" y="392" width="130" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ══ PARALLEL BRANCH 2: ELA ══ -->
+        <mxCell id="act-ela" value="ELA Analysis"
+          style="rounded=1;arcSize=50;fillColor=#40a070;strokeColor=#1a5c35;strokeWidth=1.5;fontColor=white;fontSize=12;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="390" y="337" width="140" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="act-elamap" value="ELA Error Map"
+          style="rounded=1;arcSize=20;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=1;fontSize=11;fontColor=#1a5c35;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="395" y="392" width="130" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ══ PARALLEL BRANCH 3: Noise Forensics ══ -->
+        <mxCell id="act-noise" value="&lt;b&gt;Noise Pattern Forensics&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;variance · corr · entropy · channel&lt;/font&gt;"
+          style="rounded=1;arcSize=40;fillColor=#40a070;strokeColor=#1a5c35;strokeWidth=1.5;fontColor=white;fontSize=11;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="555" y="337" width="185" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="act-noisemap" value="Noise Residual Map"
+          style="rounded=1;arcSize=20;fillColor=#c8ecd8;strokeColor=#40a070;strokeWidth=1;fontSize=11;fontColor=#1a5c35;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="560" y="392" width="140" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ══ PARALLEL BRANCH 4: DL → TTA ══ -->
+        <mxCell id="act-dl" value="&lt;b&gt;Deep Learning Models&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Fine-tuned ViT · SigLIP · SMOGY&lt;/font&gt;"
+          style="rounded=1;arcSize=40;fillColor=#9060c0;strokeColor=#5a1a7a;strokeWidth=1.5;fontColor=white;fontSize=12;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="760" y="337" width="220" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="act-tta" value="&lt;b&gt;Test-Time Augmentation&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;original · flip · center crop → avg&lt;/font&gt;"
+          style="rounded=1;arcSize=40;fillColor=#9060c0;strokeColor=#5a1a7a;strokeWidth=1.5;fontColor=white;fontSize=12;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="760" y="392" width="220" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- ══ JOIN BAR ══ -->
+        <mxCell id="join-bar" value=""
+          style="fillColor=#1F3864;strokeColor=#1F3864;rounded=1;arcSize=10;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="215" y="456" width="675" height="6" as="geometry" />
+        </mxCell>
+        <mxCell id="join-label" value="[ Join ]"
+          style="text;html=1;align=center;fontSize=10;fontColor=#1F3864;strokeColor=none;fillColor=none;"
+          vertex="1" parent="1">
+          <mxGeometry x="490" y="441" width="80" height="16" as="geometry" />
+        </mxCell>
+
+        <!-- ══ ENSEMBLE AGGREGATOR ══ -->
+        <mxCell id="act-ensemble" value="&lt;b&gt;Ensemble Aggregator (V3)&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#cccccc&quot;&gt;0.50·ViT + 0.20·Noise + 0.15·SigLIP + 0.15·SMOGY&lt;/font&gt;"
+          style="rounded=1;arcSize=25;fillColor=#4a2080;strokeColor=#1F3864;strokeWidth=2;fontColor=white;fontSize=13;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="380" y="484" width="340" height="44" as="geometry" />
+        </mxCell>
+
+        <!-- ══ DECISION: Score > 0.5? ══ -->
+        <mxCell id="dec-score" value="Score&lt;br&gt;&gt; 0.5?"
+          style="rhombus;fillColor=#ffe8b0;strokeColor=#c06000;strokeWidth=1.8;fontSize=11;fontColor=#8B4500;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="505" y="552" width="90" height="50" as="geometry" />
+        </mxCell>
+
+        <!-- FAKE -->
+        <mxCell id="act-fake" value="&lt;b&gt;FAKE&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;AI-Generated&lt;/font&gt;"
+          style="rounded=1;arcSize=40;fillColor=#ffd0d0;strokeColor=#cc0000;strokeWidth=1.5;fontSize=13;fontColor=#990000;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="660" y="559" width="120" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- REAL -->
+        <mxCell id="act-real" value="&lt;b&gt;REAL&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;Authentic Photo&lt;/font&gt;"
+          style="rounded=1;arcSize=40;fillColor=#d0ffd8;strokeColor=#1a5c35;strokeWidth=1.5;fontSize=13;fontColor=#1a5c35;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="315" y="559" width="120" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- ══ RETURN VERDICT ══ -->
+        <mxCell id="act-return" value="Return Verdict + Confidence + Visual Evidence&lt;br&gt;&lt;font style=&quot;font-size:10px&quot; color=&quot;#bbccdd&quot;&gt;(FFT map · ELA map · Noise residual · Score)&lt;/font&gt;"
+          style="rounded=1;arcSize=25;fillColor=#4a72c4;strokeColor=#1F3864;strokeWidth=1.8;fontColor=white;fontSize=12;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="368" y="646" width="360" height="42" as="geometry" />
+        </mxCell>
+
+        <!-- ══ DISPLAY RESULT (Lane 1) ══ -->
+        <mxCell id="act-display" value="&lt;b&gt;Display Result&lt;/b&gt;&lt;br&gt;&lt;font style=&quot;font-size:10px&quot;&gt;+ Forensic Visuals&lt;/font&gt;"
+          style="rounded=1;arcSize=50;fillColor=#4a72c4;strokeColor=#1F3864;strokeWidth=1.5;fontColor=white;fontSize=11;html=1;"
+          vertex="1" parent="1">
+          <mxGeometry x="22" y="650" width="158" height="36" as="geometry" />
+        </mxCell>
+
+        <!-- ══ END NODE ══ -->
+        <mxCell id="end-outer" value=""
+          style="ellipse;fillColor=none;strokeColor=#1F3864;strokeWidth=2.5;aspect=fixed;"
+          vertex="1" parent="1">
+          <mxGeometry x="83" y="710" width="42" height="42" as="geometry" />
+        </mxCell>
+        <mxCell id="end-inner" value=""
+          style="ellipse;fillColor=#1F3864;strokeColor=#1F3864;aspect=fixed;"
+          vertex="1" parent="1">
+          <mxGeometry x="89" y="716" width="30" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- ══════════════════════════════════
+             EDGES / ARROWS
+        ══════════════════════════════════ -->
+
+        <!-- START → Upload Image -->
+        <mxCell id="e-start-upload" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.5;html=1;" edge="1" source="start" target="act-upload" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Upload → Validate -->
+        <mxCell id="e-upload-validate" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.5;html=1;" edge="1" source="act-upload" target="act-validate" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Validate → Valid? -->
+        <mxCell id="e-validate-dec" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.5;html=1;" edge="1" source="act-validate" target="dec-valid" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Valid? — No → Return Error -->
+        <mxCell id="e-valid-no" value="No"
+          style="endArrow=block;endFill=1;strokeColor=#cc0000;strokeWidth=1.5;fontSize=10;fontColor=#cc0000;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="dec-valid" target="act-error" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Valid? — Yes → Preprocessing -->
+        <mxCell id="e-valid-yes" value="Yes"
+          style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.5;fontSize=10;fontColor=#1a5c35;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;"
+          edge="1" source="dec-valid" target="act-preprocess" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Preprocessing → Fork Bar -->
+        <mxCell id="e-preprocess-fork" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.5;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="act-preprocess" target="fork-bar" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Fork → FFT -->
+        <mxCell id="e-fork-fft" style="endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;html=1;exitX=0.2;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="fork-bar" target="act-fft" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Fork → ELA -->
+        <mxCell id="e-fork-ela" style="endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;html=1;exitX=0.35;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="fork-bar" target="act-ela" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Fork → Noise -->
+        <mxCell id="e-fork-noise" style="endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;html=1;exitX=0.55;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="fork-bar" target="act-noise" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Fork → DL Models -->
+        <mxCell id="e-fork-dl" style="endArrow=block;endFill=1;strokeColor=#1F3864;strokeWidth=1.5;html=1;exitX=0.9;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="fork-bar" target="act-dl" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- FFT → Frequency Map -->
+        <mxCell id="e-fft-freqmap" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.2;html=1;" edge="1" source="act-fft" target="act-freqmap" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ELA → ELA Map -->
+        <mxCell id="e-ela-elamap" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.2;html=1;" edge="1" source="act-ela" target="act-elamap" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Noise → Noise Map -->
+        <mxCell id="e-noise-noisemap" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.2;html=1;" edge="1" source="act-noise" target="act-noisemap" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- DL → TTA -->
+        <mxCell id="e-dl-tta" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.2;html=1;" edge="1" source="act-dl" target="act-tta" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- FreqMap → Join Bar -->
+        <mxCell id="e-freqmap-join" style="endArrow=none;strokeColor=#334466;strokeWidth=1.2;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.2;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="act-freqmap" target="join-bar" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ELA Map → Join Bar -->
+        <mxCell id="e-elamap-join" style="endArrow=none;strokeColor=#334466;strokeWidth=1.2;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.35;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="act-elamap" target="join-bar" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Noise Map → Join Bar -->
+        <mxCell id="e-noisemap-join" style="endArrow=none;strokeColor=#334466;strokeWidth=1.2;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.55;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="act-noisemap" target="join-bar" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- TTA → Join Bar -->
+        <mxCell id="e-tta-join" style="endArrow=none;strokeColor=#334466;strokeWidth=1.2;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.88;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="act-tta" target="join-bar" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Join Bar → Ensemble -->
+        <mxCell id="e-join-ensemble" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.5;html=1;exitX=0.55;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="join-bar" target="act-ensemble" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Ensemble → Decision Score -->
+        <mxCell id="e-ensemble-dec" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.5;html=1;" edge="1" source="act-ensemble" target="dec-score" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Decision: Yes → FAKE -->
+        <mxCell id="e-dec-fake" value="Yes"
+          style="endArrow=block;endFill=1;strokeColor=#cc0000;strokeWidth=1.5;fontSize=10;fontColor=#cc0000;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="dec-score" target="act-fake" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Decision: No → REAL -->
+        <mxCell id="e-dec-real" value="No"
+          style="endArrow=block;endFill=1;strokeColor=#1a5c35;strokeWidth=1.5;fontSize=10;fontColor=#1a5c35;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="dec-score" target="act-real" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- FAKE → Return Verdict -->
+        <mxCell id="e-fake-return" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.2;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.85;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="act-fake" target="act-return" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- REAL → Return Verdict -->
+        <mxCell id="e-real-return" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.2;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.15;entryY=0;entryDx=0;entryDy=0;"
+          edge="1" source="act-real" target="act-return" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Return Verdict → Display Result -->
+        <mxCell id="e-return-display" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.5;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;"
+          edge="1" source="act-return" target="act-display" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Display Result → END -->
+        <mxCell id="e-display-end" style="endArrow=block;endFill=1;strokeColor=#334466;strokeWidth=1.5;html=1;" edge="1" source="act-display" target="end-inner" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- ══ LEGEND ══ -->
+        <mxCell id="legend-bg" value="" style="fillColor=white;strokeColor=#cccccc;strokeWidth=1;rounded=1;arcSize=3;html=1;" vertex="1" parent="1">
+          <mxGeometry x="15" y="780" width="875" height="55" as="geometry" />
+        </mxCell>
+        <mxCell id="leg-title" value="Legend" style="text;html=1;align=center;fontStyle=1;fontSize=12;fontColor=#1F3864;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="400" y="783" width="100" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="leg1" value="User Action"   style="rounded=1;arcSize=40;fillColor=#4a72c4;strokeColor=#1F3864;fontSize=10;fontColor=white;html=1;" vertex="1" parent="1"><mxGeometry x="30"  y="805" width="95"  height="20" as="geometry" /></mxCell>
+        <mxCell id="leg2" value="Backend Process" style="rounded=1;arcSize=40;fillColor=#f09040;strokeColor=#c06000;fontSize=10;fontColor=white;html=1;" vertex="1" parent="1"><mxGeometry x="135" y="805" width="115" height="20" as="geometry" /></mxCell>
+        <mxCell id="leg3" value="AI / Forensic Engine" style="rounded=1;arcSize=40;fillColor=#40a070;strokeColor=#1a5c35;fontSize=10;fontColor=white;html=1;" vertex="1" parent="1"><mxGeometry x="260" y="805" width="135" height="20" as="geometry" /></mxCell>
+        <mxCell id="leg4" value="Deep Learning" style="rounded=1;arcSize=40;fillColor=#9060c0;strokeColor=#5a1a7a;fontSize=10;fontColor=white;html=1;" vertex="1" parent="1"><mxGeometry x="405" y="805" width="105" height="20" as="geometry" /></mxCell>
+        <mxCell id="leg5" value="Ensemble Logic" style="rounded=1;arcSize=40;fillColor=#4a2080;strokeColor=#1F3864;fontSize=10;fontColor=white;html=1;" vertex="1" parent="1"><mxGeometry x="520" y="805" width="110" height="20" as="geometry" /></mxCell>
+        <mxCell id="leg6" value="Decision" style="rhombus;fillColor=#ffe8b0;strokeColor=#c06000;fontSize=10;fontColor=#8B4500;html=1;" vertex="1" parent="1"><mxGeometry x="645" y="799" width="78" height="32" as="geometry" /></mxCell>
+        <mxCell id="leg7" value="Error / Result" style="rounded=1;arcSize=20;fillColor=#ffd6d6;strokeColor=#cc0000;fontSize=10;fontColor=#990000;html=1;" vertex="1" parent="1"><mxGeometry x="735" y="805" width="100" height="20" as="geometry" /></mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

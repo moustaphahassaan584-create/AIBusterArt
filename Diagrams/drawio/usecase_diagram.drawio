@@ -1,0 +1,240 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="AIBuster Use Case Diagram" id="aibuster-usecase">
+    <mxGraphModel dx="900" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1400" pageHeight="1100" background="none" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <!-- ═══ System Boundary ═══ -->
+        <mxCell id="boundary" parent="1" style="text;html=1;align=center;verticalAlign=top;fontStyle=1;fontSize=14;fontColor=#1F3864;                  strokeColor=#1F3864;strokeWidth=2.5;dashed=1;dashPattern=8 4;                  fillColor=#f8faff;rounded=1;arcSize=2;spacingTop=4;" value="AIBuster Detection System" vertex="1">
+          <mxGeometry height="970" width="720" x="195" y="20" as="geometry" />
+        </mxCell>
+        <!-- ═══ Actors ═══ -->
+        <mxCell id="actor-user" parent="1" style="shape=mxgraph.uml.actor2;whiteSpace=wrap;html=1;                  strokeColor=#1F3864;fillColor=#dce8fb;fontColor=#1F3864;fontSize=11;" value="&lt;b&gt;User&lt;/b&gt;&lt;br&gt;«Main Actor»" vertex="1">
+          <mxGeometry height="130" width="60" x="25" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-dev" parent="1" style="shape=mxgraph.uml.actor2;whiteSpace=wrap;html=1;                  strokeColor=#1a5c35;fillColor=#d4f0e0;fontColor=#1a5c35;fontSize=11;" value="&lt;b&gt;Developer&lt;/b&gt;&lt;br&gt;«Admin»" vertex="1">
+          <mxGeometry height="130" width="60" x="25" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-hf" parent="1" style="shape=mxgraph.uml.actor2;whiteSpace=wrap;html=1;                  strokeColor=#f09040;fillColor=#fff3e8;fontColor=#f09040;fontSize=11;" value="&lt;b&gt;HuggingFace&lt;/b&gt;&lt;br&gt;«External»" vertex="1">
+          <mxGeometry height="130" width="70" x="1100" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="actor-android" parent="1" style="shape=mxgraph.uml.actor2;whiteSpace=wrap;html=1;                  strokeColor=#7050a8;fillColor=#f0eafc;fontColor=#7050a8;fontSize=11;" value="&lt;b&gt;Android App&lt;/b&gt;&lt;br&gt;«Mobile Client»" vertex="1">
+          <mxGeometry height="130" width="70" x="1100" y="620" as="geometry" />
+        </mxCell>
+        <!-- ═══ LEFT COLUMN – User Use Cases ═══ -->
+        <mxCell id="uc1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dce8fb;strokeColor=#1F3864;strokeWidth=1.8;fontSize=12;fontColor=#1F3864;" value="Upload Image" vertex="1">
+          <mxGeometry height="50" width="270" x="215" y="95" as="geometry" />
+        </mxCell>
+        <mxCell id="uc2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dce8fb;strokeColor=#1F3864;strokeWidth=1.8;fontSize=12;fontColor=#1F3864;" value="View Verdict (REAL / FAKE)" vertex="1">
+          <mxGeometry height="50" width="270" x="215" y="185" as="geometry" />
+        </mxCell>
+        <mxCell id="uc3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dce8fb;strokeColor=#1F3864;strokeWidth=1.8;fontSize=12;fontColor=#1F3864;" value="View Confidence Score" vertex="1">
+          <mxGeometry height="50" width="270" x="215" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="uc4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dce8fb;strokeColor=#1F3864;strokeWidth=1.8;fontSize=12;fontColor=#1F3864;" value="View Forensic Visuals&#xa;(FFT · ELA · Noise map)" vertex="1">
+          <mxGeometry height="52" width="270" x="215" y="365" as="geometry" />
+        </mxCell>
+        <mxCell id="uc5" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dce8fb;strokeColor=#1F3864;strokeWidth=1.8;fontSize=12;fontColor=#1F3864;" value="Use Web Interface (Gradio)" vertex="1">
+          <mxGeometry height="50" width="270" x="215" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="uc6" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dce8fb;strokeColor=#1F3864;strokeWidth=1.8;fontSize=12;fontColor=#1F3864;" value="Use REST API  /analyze" vertex="1">
+          <mxGeometry height="50" width="270" x="215" y="555" as="geometry" />
+        </mxCell>
+        <!-- ═══ LEFT COLUMN – Developer Use Cases ═══ -->
+        <mxCell id="ucdev1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d4f0e0;strokeColor=#1a5c35;strokeWidth=1.8;fontSize=12;fontColor=#1a5c35;" value="Train &amp; Fine-tune Model" vertex="1">
+          <mxGeometry height="50" width="270" x="215" y="660" as="geometry" />
+        </mxCell>
+        <mxCell id="ucdev2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d4f0e0;strokeColor=#1a5c35;strokeWidth=1.8;fontSize=12;fontColor=#1a5c35;" value="Deploy to HF Spaces" vertex="1">
+          <mxGeometry height="50" width="270" x="215" y="755" as="geometry" />
+        </mxCell>
+        <mxCell id="ucdev3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#d4f0e0;strokeColor=#1a5c35;strokeWidth=1.8;fontSize=12;fontColor=#1a5c35;" value="Push Model Weights to Hub" vertex="1">
+          <mxGeometry height="50" width="270" x="215" y="850" as="geometry" />
+        </mxCell>
+        <!-- ═══ RIGHT COLUMN – System / Internal Use Cases (spread out) ═══ -->
+        <mxCell id="uc7" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=1.8;fontSize=12;fontColor=#8B4500;" value="Preprocess Image&#xa;(EXIF strip · CLAHE · resize)" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="85" as="geometry" />
+        </mxCell>
+        <mxCell id="uc8" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#eef8f2;strokeColor=#40a070;strokeWidth=1.8;fontSize=12;fontColor=#1a5c35;" value="Run FFT Analysis" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="205" as="geometry" />
+        </mxCell>
+        <mxCell id="uc9" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#eef8f2;strokeColor=#40a070;strokeWidth=1.8;fontSize=12;fontColor=#1a5c35;" value="Run ELA Analysis" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="uc10" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#eef8f2;strokeColor=#40a070;strokeWidth=1.8;fontSize=12;fontColor=#1a5c35;" value="Run Noise Forensics" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="uc11" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f0eafc;strokeColor=#9060c0;strokeWidth=1.8;fontSize=12;fontColor=#5a1a7a;" value="Run DL Classification&#xa;(ViT · SigLIP · SMOGY + TTA)" vertex="1">
+          <mxGeometry height="52" width="280" x="600" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="uc12" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e8d0f8;strokeColor=#4a2080;strokeWidth=2;fontSize=12;fontColor=#4a2080;fontStyle=1;" value="Ensemble Aggregation" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="uc13" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e8d0f8;strokeColor=#4a2080;strokeWidth=2;fontSize=12;fontColor=#4a2080;fontStyle=1;" value="Generate &amp; Return Verdict" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="775" as="geometry" />
+        </mxCell>
+        <mxCell id="uc14" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=1.8;fontSize=12;fontColor=#8B4500;" value="Load Model Weights" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="870" as="geometry" />
+        </mxCell>
+        <mxCell id="uc15" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fff3e8;strokeColor=#f09040;strokeWidth=1.8;fontSize=12;fontColor=#8B4500;" value="Serve Inference Endpoint" vertex="1">
+          <mxGeometry height="50" width="280" x="600" y="945" as="geometry" />
+        </mxCell>
+        <!-- ═══ Actor → Use-Case associations ═══ -->
+        <mxCell id="a-u-uc1" edge="1" parent="1" source="actor-user" style="endArrow=none;html=1;strokeColor=#1F3864;strokeWidth=1.4;" target="uc1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-u-uc2" edge="1" parent="1" source="actor-user" style="endArrow=none;html=1;strokeColor=#1F3864;strokeWidth=1.4;" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-u-uc3" edge="1" parent="1" source="actor-user" style="endArrow=none;html=1;strokeColor=#1F3864;strokeWidth=1.4;" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-u-uc4" edge="1" parent="1" source="actor-user" style="endArrow=none;html=1;strokeColor=#1F3864;strokeWidth=1.4;" target="uc4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-u-uc5" edge="1" parent="1" source="actor-user" style="endArrow=none;html=1;strokeColor=#1F3864;strokeWidth=1.4;" target="uc5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-u-uc6" edge="1" parent="1" source="actor-user" style="endArrow=none;html=1;strokeColor=#1F3864;strokeWidth=1.4;" target="uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-d-dev1" edge="1" parent="1" source="actor-dev" style="endArrow=none;html=1;strokeColor=#1a5c35;strokeWidth=1.4;" target="ucdev1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-d-dev2" edge="1" parent="1" source="actor-dev" style="endArrow=none;html=1;strokeColor=#1a5c35;strokeWidth=1.4;" target="ucdev2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-d-dev3" edge="1" parent="1" source="actor-dev" style="endArrow=none;html=1;strokeColor=#1a5c35;strokeWidth=1.4;" target="ucdev3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-hf-uc14" edge="1" parent="1" source="actor-hf" style="endArrow=none;html=1;strokeColor=#f09040;strokeWidth=1.4;" target="uc14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-hf-uc15" edge="1" parent="1" source="actor-hf" style="endArrow=none;html=1;strokeColor=#f09040;strokeWidth=1.4;" target="uc15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-and-uc6" edge="1" parent="1" source="actor-android" style="endArrow=none;html=1;strokeColor=#7050a8;strokeWidth=1.4;" target="uc6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-and-uc13" edge="1" parent="1" source="actor-android" style="endArrow=none;html=1;strokeColor=#7050a8;strokeWidth=1.4;" target="uc13">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-and-uc2" edge="1" parent="1" source="actor-android" style="endArrow=none;html=1;strokeColor=#7050a8;strokeWidth=1.4;" target="uc2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a-and-uc3" edge="1" parent="1" source="actor-android" style="endArrow=none;html=1;strokeColor=#7050a8;strokeWidth=1.4;" target="uc3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ═══ LEFT COLUMN include/extend (within col-1) ═══ -->
+        <mxCell id="inc-uc5-uc1" edge="1" parent="1" source="uc5" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc1" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="inc-uc6-uc1" edge="1" parent="1" source="uc6" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc1" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ═══ CROSS-COLUMN include: uc1 → uc7 ═══ -->
+        <mxCell id="inc-uc1-uc7" edge="1" parent="1" source="uc1" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;" target="uc7" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ═══ CROSS-COLUMN extend edges ═══ -->
+        <mxCell id="ext-uc2-uc13" edge="1" parent="1" source="uc2" style="endArrow=open;endFill=0;dashed=1;dashPattern=4 4;html=1;strokeColor=#888888;strokeWidth=1.2;fontSize=9;fontColor=#888888;labelBackgroundColor=none;exitX=0.85;exitY=1;entryX=0.15;entryY=0;" target="uc13" value="«extend»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="510" y="400" />
+              <mxPoint x="510" y="770" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ext-uc3-uc13" edge="1" parent="1" source="uc3" style="endArrow=open;endFill=0;dashed=1;dashPattern=4 4;html=1;strokeColor=#888888;strokeWidth=1.2;fontSize=9;fontColor=#888888;labelBackgroundColor=none;exitX=0.9;exitY=1;entryX=0.1;entryY=0;" target="uc13" value="«extend»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="530" y="450" />
+              <mxPoint x="530" y="775" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ext-uc4-uc8" edge="1" parent="1" source="uc4" style="endArrow=open;endFill=0;dashed=1;dashPattern=4 4;html=1;strokeColor=#888888;strokeWidth=1.2;fontSize=9;fontColor=#888888;labelBackgroundColor=none;" target="uc8" value="«extend»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- ═══ RIGHT-SIDE FAN: uc7 → uc8,uc9,uc10,uc11 (routed RIGHT of ellipses) ═══ -->
+        <mxCell id="inc-uc7-uc8" edge="1" parent="1" source="uc7" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#2e7d32;strokeWidth=1.3;fontSize=9;fontColor=#2e7d32;labelBackgroundColor=none;exitX=0.8;exitY=1;entryX=0.8;entryY=0;" target="uc8" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="824" y="165" />
+              <mxPoint x="824" y="195" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-uc7-uc9" edge="1" parent="1" source="uc7" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#2e7d32;strokeWidth=1.3;fontSize=9;fontColor=#2e7d32;labelBackgroundColor=none;exitX=0.9;exitY=1;entryX=0.9;entryY=0;" target="uc9" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="895" y="155" />
+              <mxPoint x="895" y="310" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-uc7-uc10" edge="1" parent="1" source="uc7" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#2e7d32;strokeWidth=1.3;fontSize=9;fontColor=#2e7d32;labelBackgroundColor=none;exitX=0.95;exitY=0.8;entryX=0.95;entryY=0;" target="uc10" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="920" y="148" />
+              <mxPoint x="920" y="425" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-uc7-uc11" edge="1" parent="1" source="uc7" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#2e7d32;strokeWidth=1.3;fontSize=9;fontColor=#2e7d32;labelBackgroundColor=none;exitX=1;exitY=0.7;entryX=1;entryY=0;" target="uc11" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="945" y="140" />
+              <mxPoint x="945" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- ═══ LEFT-SIDE FAN: uc12 → uc8,uc9,uc10,uc11 (routed LEFT of ellipses) ═══ -->
+        <mxCell id="inc-uc12-uc11" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#7b1fa2;strokeWidth=1.3;fontSize=9;fontColor=#7b1fa2;labelBackgroundColor=none;exitX=0.2;exitY=0;entryX=0.2;entryY=1;" target="uc11" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="656" y="640" />
+              <mxPoint x="656" y="610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-uc12-uc10" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#7b1fa2;strokeWidth=1.3;fontSize=9;fontColor=#7b1fa2;labelBackgroundColor=none;exitX=0.1;exitY=0;entryX=0.1;entryY=1;" target="uc10" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="575" y="635" />
+              <mxPoint x="575" y="495" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-uc12-uc9" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#7b1fa2;strokeWidth=1.3;fontSize=9;fontColor=#7b1fa2;labelBackgroundColor=none;exitX=0.05;exitY=0;entryX=0.05;entryY=1;" target="uc9" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="555" y="638" />
+              <mxPoint x="555" y="380" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="inc-uc12-uc8" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#7b1fa2;strokeWidth=1.3;fontSize=9;fontColor=#7b1fa2;labelBackgroundColor=none;exitX=0;exitY=0.3;entryX=0;entryY=1;" target="uc8" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="645" />
+              <mxPoint x="540" y="260" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <!-- uc12 → uc13 (straight down, no overlap issue) -->
+        <mxCell id="inc-uc12-uc13" edge="1" parent="1" source="uc12" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#555555;strokeWidth=1.3;fontSize=9;fontColor=#555555;labelBackgroundColor=none;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="uc13" value="«include»">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- uc14 → uc11 (routed FAR RIGHT to avoid overlap) -->
+        <mxCell id="inc-uc14-uc11" edge="1" parent="1" source="uc14" style="endArrow=open;endFill=0;dashed=1;dashPattern=5 3;html=1;strokeColor=#f09040;strokeWidth=1.3;fontSize=9;fontColor=#f09040;labelBackgroundColor=none;exitX=1;exitY=0.3;entryX=1;entryY=0.8;" target="uc11" value="«include»">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="885" />
+              <mxPoint x="960" y="590" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
